@@ -3,16 +3,16 @@
 #include <time.h>
 using namespace std;
 
-namespace mynamespace {
+namespace Dmytro { // Дмитро
 	template <typename T>
-	void Sortfunction(T arr[], const long size) { // 20 10 30 50 40
+	void Sort(T arr[], const long size) { // 20 10 30 50 40
 		for (int i = 0; i < size - 1; i++) { // 20
 			for (int j = i + 1; j < size; j++) { // 10
 				if (arr[i] > arr[j]) // 20 > 10
 					swap(arr[i], arr[j]); // 10 20
 			}
 		}
-
+    cout << "Масив пiсля сортування: ";
 		for (int i = 0; i < size; i++)
 			cout << arr[i] << " ";
 	}
@@ -22,16 +22,18 @@ namespace mynamespace {
 		cout << "Введіть кількість Елементiв масива: ";
 		cin >> size;
 		double* arr = new double[size];
-		for (int i = 0; i < size; i++)
-			arr[i] = (rand() % 100 - 50) / 10.f;
-
-		Sortfunction(arr, size);
+    cout << "Масив до сортування:    ";
+		for (int i = 0; i < size; i++) {
+        			arr[i] = (rand() % 100 - 50) / 2;
+        			cout << arr[i] << " ";
+    }
+    cout << "\n";
+		Sort(arr, size);
 	}
 }
 
 int main() {
-	system("chcp 1251>nul"); // Windows
-	mynamespace::function();
+	Dmytro::function();
 
 	return 0;
 }

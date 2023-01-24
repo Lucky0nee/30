@@ -3,33 +3,32 @@
 #include <time.h>
 using namespace std;
 
-namespace Dmytro { // Дмитро
+namespace Dmytro {
 	template <typename T>
-	void Sort(T arr[], const long size) { // 20 10 30 50 40
-		for (int i = 0; i < size - 1; i++) { // 20
-			for (int j = i + 1; j < size; j++) { // 10
-				if (arr[i] > arr[j]) // 20 > 10
-					swap(arr[i], arr[j]); // 10 20
+	void Sort(T arr[], const long size) {
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = i + 1; j < size; j++) {
+				if (arr[i] > arr[j])
+					swap(arr[i], arr[j]);
 			}
 		}
-    cout << "Масив пiсля сортування: ";
+		cout << "Масив пiсля сортування: ";
 		for (int i = 0; i < size; i++)
 			cout << arr[i] << " ";
-    delete[] arr;
 	}
 	void function() {
 		srand(time(NULL));
 		long size;
-		cout << "Введіть кількість Елементiв масива: ";
-		cin >> size;
+		cout << "Введіть кількість Елементiв масива: "; cin >> size;
 		double* arr = new double[size];
-    cout << "Масив до сортування:    ";
+		cout << "Масив до сортування:    ";
 		for (int i = 0; i < size; i++) {
-        			arr[i] = (rand() % 100 - 50) / 2;
-        			cout << arr[i] << " ";
-    }
-    cout << "\n";
+			arr[i] = (rand() % 100 - 50) / 2;
+			cout << arr[i] << " ";
+		}
+		cout << "\n";
 		Sort(arr, size);
+    delete[] arr;
 	}
 }
 

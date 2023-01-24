@@ -15,6 +15,7 @@ namespace Dmytro { // Дмитро
     cout << "Масив пiсля сортування: ";
 		for (int i = 0; i < size; i++)
 			cout << arr[i] << " ";
+    delete[] arr;
 	}
 	void function() {
 		srand(time(NULL));
